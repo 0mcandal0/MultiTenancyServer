@@ -45,6 +45,8 @@ namespace MultiTenancyServer.Hosting
                 {
                     _logger.LogInformation("No tenant was found for request {RequestUrl}.", httpContext.Request.GetDisplayUrl());
                 }
+            } else {
+                _logger.LogDebug("No tenant was found for request {RequestUrl}.", httpContext.Request.GetDisplayUrl());
             }
 
             tenancyContext.Tenant = tenant;
