@@ -1,6 +1,8 @@
 ﻿// Copyright (c) Kris Penner. All rights reserved.
 // Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
 
+using System;
+using System.IO;
 using System.Threading.Tasks;
 using KodeAid;
 using Microsoft.AspNetCore.Http;
@@ -45,7 +47,9 @@ namespace MultiTenancyServer.Hosting
                 {
                     _logger.LogInformation("No tenant was found for request {RequestUrl}.", httpContext.Request.GetDisplayUrl());
                 }
-            } else {
+            }
+            else
+            {
                 _logger.LogDebug("No tenant was found for request {RequestUrl}.", httpContext.Request.GetDisplayUrl());
             }
 
